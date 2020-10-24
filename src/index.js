@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import MyTable from './components/MyTable';
 import './index.css';
 
 
-
-ReactDOM.render(<h1>Hello world!</h1>, document.getElementById("root"))
+ReactDOM.render(
+  <MyTable/>,
+  document.getElementById("root")
+);
