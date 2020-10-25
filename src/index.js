@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MyTable from './components/MyTable';
 import './index.css';
+import MyPage from './components/MyPage';
+
+
 
 
 ReactDOM.render(
-  <MyTable/>,
+  <MyPage/>,
   document.getElementById("root")
 );

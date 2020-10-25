@@ -3,14 +3,18 @@ import React from "react";
 
 function MyTable() {
     return (
-      <table>
+      <div className="block block-table">
+        <table>
         <tr>
           <th>Дата</th>
-          <th>Пресс</th>
+          <th>Верхний пресс</th>
+          <th>Нижний пресс</th>
           <th>Отжимания</th>
           <th>Приседания</th>
         </tr>
-      </table>
+        </table>
+      </div>
+
     )
   }
 
