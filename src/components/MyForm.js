@@ -1,30 +1,18 @@
-import React from "react";
-
+import React from 'react';
+import MyExercise from './MyExercise';
+import exercisesData from './exercisesData';
 
 function MyForm() {
+    const exercisesComponents = exercisesData.map(exercises =>
+        <MyExercise type={exercises.type} label={exercises.label} id={exercises.id} key={exercises.id}/>)
     return (
         <div className="block block-form">
             <form>
                 <div className="field">
-                    <label for="date">Дата </label>
-                    <input type="date"></input>
+                    <label htmlFor="date">Дата</label>
+                    <input type="date" for="date" key="date"/>
                 </div>
-                <div className="field">
-                    <label for="highPress">Верхний пресс </label>
-                    <input type="text" id="highPress"></input>
-                </div>
-                <div className="field">
-                    <label for="lowPress">Нижний пресс </label>
-                    <input type="text" id="lowPress"></input>
-                </div>
-                <div className="field">
-                    <label for="pushups">Отжимания </label>
-                    <input type="text" id="pushups"></input>
-                </div>
-                <div className="field">
-                    <label for="squats">Приседания </label>
-                    <input type="text" id="squats"></input>
-                </div>
+                {exercisesComponents}
                 <button type="add">Добавить</button>
             </form>
         </div>
