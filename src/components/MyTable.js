@@ -1,7 +1,13 @@
 import React from "react";
 
+class MyTable extends React.Component {
+  constructor(props) {
+    super(props)
+  }
 
-function MyTable() {
+
+
+  render() {
     return (
       <div className="block block-table">
         <table>
@@ -12,10 +18,17 @@ function MyTable() {
           <th>Отжимания</th>
           <th>Приседания</th>
         </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
         </table>
       </div>
-
     )
   }
+}
 
-  export default MyTable;
+export default MyTable;

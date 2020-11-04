@@ -39,5 +39,10 @@ table {
   padding: 10px 15px;
   font-size: 15px;
   font-weight: 600;
+  background-color: black;
+  color: white;
+ }
 
+ form button:focus {
+  outline: 0;
  }
