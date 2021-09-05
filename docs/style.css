@@ -1,3 +1,7 @@
-body {
+.sea-theme {
     background-color: aqua;
+}
+
+.blood-theme {
+    background-color: darkred;
 }
