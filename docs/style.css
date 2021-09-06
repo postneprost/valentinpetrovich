@@ -1,7 +1,29 @@
+.page {
+    font-size: 20px;
+    font-family:sans-serif;
+}
+
 .sea-theme {
     background-color: aqua;
 }
 
 .blood-theme {
     background-color: darkred;
+}
+
+.theme-button {
+    background-color:yellow;
+    padding: 15px 20px;
+    border-radius: 30px;
+    border: thin;
+    box-shadow: 0px 0px 24px 19px rgba(217, 0, 255, 0.29);
+    position: absolute;
+    top: 90%;
+    left: 88%;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.theme-button:hover {
+    opacity: 85%;
 }
