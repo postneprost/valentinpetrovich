@@ -21,15 +21,16 @@
     font-weight: 700;
 }
 
+.button:hover {
+    opacity: 85%;
+    cursor: pointer;
+}
+
 .button-theme {
     background-color:yellow;
     position: absolute;
     top: 90%;
     left: 88%;
-}
-
-.button-theme:hover {
-    opacity: 85%;
 }
 
 .button-calculate {
