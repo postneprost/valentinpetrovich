@@ -6,19 +6,27 @@ window.onload = function(){
         page.classList.toggle("blood-theme");
       };
 
+      function getDigit(i) {
+        let num;
+        do {
+          num = +prompt(`Введите число ${i}`, 0);
+        } while (isNaN(num));
+        return num;
+      };
+
       function Calculator() {
 
         this.read = function() {
-          this.x = +prompt('Введите x', 0);
-          this.y = +prompt('Введите y', 0);
+          this.x = getDigit(1);
+          this.y = getDigit(2);
         },
 
         this.sum = function() {
           return this.x + this.y;
-        }
+        },
 
         this.mul = function() {
-          return this.x * this.x;
+          return this.x * this.y;
         }
       };
 
@@ -26,7 +34,6 @@ window.onload = function(){
     buttonCalculate.onclick = function() {
       let calculator = new Calculator();
       calculator.read();
-      alert( "Сумма = " + calculator.sum() );
-      alert( "Произведение = " + calculator.mul() );
+      alert("Сумма = " + calculator.sum() + "\r" + "Произведение = " + calculator.mul());
     }
 };
