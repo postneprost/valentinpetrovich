@@ -24,7 +24,7 @@ function getDigit(i) {
   let num;
   do {
     num = prompt(`Введите число ${i}`, 0);
-  } while (!isFinite(num) || num.length < 1);
+  } while (isNaN(parseFloat(num)) || !isFinite(num));
   return +num;
 };
 
