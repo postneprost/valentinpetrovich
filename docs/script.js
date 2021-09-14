@@ -15,13 +15,16 @@ window.onload = function() {
 
     let buttonSymbolCode = document.querySelector(".button-symbol-code");
     buttonSymbolCode.onclick = getSymbolCode;
-};
+
+    let buttonSymbolCount = document.querySelector(".button-symbol-count");
+    buttonSymbolCount.onclick = getSymbolCount;
+}
 
 function getDigit(i) {
   let num;
   do {
     num = prompt(`Введите число ${i}`, 0);
-  } while (!isFinite(num) ||  num === '');
+  } while (!isFinite(num) || num.length < 1);
   return +num;
 };
 
@@ -44,4 +47,23 @@ function Calculator() {
 function getSymbolCode() {
   let str = prompt('Введите строку, вернем код первого символа', '');
   alert(`В двоичной: ${str.codePointAt(0)}\nВ шестнадцатиричной: ${str.codePointAt(0).toString(16)}`);
+}
+
+function getSymbolCount() {
+  let str;
+  do {
+    str = prompt(`Введите строку`, '');
+  } while (str.length < 1);
+
+  let symb;
+  do {
+    symb = prompt(`Введите один интересующий символ`, '');
+  } while (symb.length != 1);
+
+  let count = 0;
+  let pos = -1;
+  while ((pos = str.indexOf(symb, pos + 1)) != -1) {
+    count++;
+  }
+  alert(`Количество символов '${symb}' в строке: ${count}`);
 }

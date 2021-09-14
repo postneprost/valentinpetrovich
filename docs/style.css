@@ -43,3 +43,8 @@
     background-color: black;
     color: chartreuse;
 }
+
+.button-symbol-count {
+    background-color:rgb(15, 236, 15);
+    color:red;
+}
