@@ -1,4 +1,4 @@
-window.onload = function(){
+window.onload = function() {
     let page = document.querySelector(".page");
     let buttonTheme = document.querySelector(".button-theme");
     buttonTheme.onclick = function() {
@@ -12,6 +12,9 @@ window.onload = function(){
       calculator.read();
       alert("Сумма = " + calculator.sum() + "\r" + "Произведение = " + calculator.mul());
       }
+
+    let buttonSymbolCode = document.querySelector(".button-symbol-code");
+    buttonSymbolCode.onclick = getSymbolCode;
 };
 
 function getDigit(i) {
@@ -36,4 +39,9 @@ function Calculator() {
   this.mul = function() {
     return this.x * this.y;
   }
-};
+}
+
+function getSymbolCode() {
+  let str = prompt('Введите строку, вернем код первого символа', '');
+  alert(`В двоичной: ${str.codePointAt(0)}\nВ шестнадцатиричной: ${str.codePointAt(0).toString(16)}`);
+}
