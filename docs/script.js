@@ -9,9 +9,9 @@ window.onload = function(){
       function getDigit(i) {
         let num;
         do {
-          num = +prompt(`Введите число ${i}`, 0);
-        } while (isNaN(num));
-        return num;
+          num = prompt(`Введите число ${i}`, 0);
+        } while (!isFinite(num) || num === null || num === '');
+        return +num;
       };
 
       function Calculator() {
