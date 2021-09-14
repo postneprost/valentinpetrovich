@@ -10,7 +10,7 @@ window.onload = function(){
         let num;
         do {
           num = prompt(`Введите число ${i}`, 0);
-        } while (!isFinite(num) || num === null || num === '');
+        } while (!isFinite(num) ||  num === '');
         return +num;
       };
 
