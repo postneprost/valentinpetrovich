@@ -29,8 +29,8 @@
 .button-theme {
     background-color:yellow;
     position: absolute;
-    top: 90%;
-    left: 88%;
+    bottom: 50px;
+    right: 50px;
 }
 
 .button-calculate {
