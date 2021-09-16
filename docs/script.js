@@ -18,6 +18,9 @@ window.onload = function() {
 
     let buttonSymbolCount = document.querySelector(".button-symbol-count");
     buttonSymbolCount.onclick = getSymbolCount;
+
+    let buttonForArray = document.querySelector(".button-for-array");
+    buttonForArray.onclick = on;
 }
 
 function getDigit(i) {
@@ -66,4 +69,25 @@ function getSymbolCount() {
     count++;
   }
   alert(`Количество символов '${symb}' в строке: ${count}`);
+}
+
+function getUserText() {
+  return document.querySelector(".array-textarea").value;
+}
+
+function sortArrayByLengthWord(arr) {
+  return arr.split(' ').slice().sort((a, b) => b.length - a.length);
+}
+
+function arrayToText(arr) {
+  return arr.join('\t');
+}
+
+function on() {
+  overlay.style.display = "block";
+  document.querySelector(".lightbox-content").textContent = arrayToText(sortArrayByLengthWord(getUserText()));
+}
+
+function off() {
+  overlay.style.display = "none";
 }

@@ -21,7 +21,21 @@
       <p>Представляем вашему вниманию самые крутые штуки</p>
       <button class="button button-calculate" type="button">Калькулятор</button>
       <button class="button button-symbol-code" type="button">Код символа</button>
-      <button class="button button-symbol-count" type="button">Посчитать символы</button>
+      <button class="button button-symbol-count" type="button">Посчитать символы</button></br>
+      <div class="array-section">
+        <label class="label">Поле для ввода текста</label><br>
+        <textarea class="array-textarea" id="text" name="text" rows="15" cols="55"></textarea>
+        <button class="button button-for-array" type="button">Сортировать по длине слов</button>
+        <div class="overlay" id="overlay">
+          <div class="lightbox-sorted-text">
+              <div class="lightbox-title">Отсортированный текст</div>
+              <div class="lightbox-content"></div>
+              <div>
+                  <button type="button" class="button button-close-lightbox" onclick="off()">Закрыть</button>
+              </div>
+          </div>
+      </div>
+      </div>
       <button class="button button-theme" type="button">Изменить тему</button>
     </section>
   </body>
