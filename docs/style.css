@@ -49,11 +49,18 @@
     color:red;
 }
 
-.button-for-array {
+.button-word-length {
     background-color: red;
     color:yellowgreen;
     position: relative;
-    bottom: 195px;
+    bottom: 430px;
+}
+
+.button-popular-symbol {
+    background-color: orange;
+    color:black;
+    position: relative;
+    bottom: 430px;
 }
 
 .array-section {
