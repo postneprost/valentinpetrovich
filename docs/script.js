@@ -74,20 +74,24 @@ function getSymbolCount() {
 
 let getUserText = () => document.querySelector(".array-textarea").value;
 
-let sortArrayByLengthWord = (arr) => arr.split(' ').slice().sort((a, b) => b.length - a.length);
+let sortArrayByLengthWord = (arr) => arr.sort((a, b) => b.length - a.length);
+
+let textToArray = (str) => str.split(' ');
+
+let deleteEmptyElements = (arr) => arr.filter((item) => item.trim().length != 0);
 
 let arrayToText = (arr) => arr.join('\t');
 
 function sortWordLength() {
   overlay.style.display = "block";
-  document.querySelector(".lightbox-content").textContent = arrayToText(sortArrayByLengthWord(getUserText()));
+  document.querySelector(".lightbox-content").textContent = arrayToText(sortArrayByLengthWord(deleteEmptyElements(textToArray(getUserText()))));
 }
 
 function getPopularSymbols(str) {
   let popSymbolsObj = {};
   let resStr = '';
 
-  str.split('').forEach((item) => {
+  deleteEmptyElements(str.split('')).forEach((item) => {
       !popSymbolsObj[item] ? popSymbolsObj[item] = 1 : popSymbolsObj[item]++;
     }
   );
