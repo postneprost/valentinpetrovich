@@ -12,6 +12,16 @@
     background-color: darkred;
 }
 
+.nav-menu {
+    color: black;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.nav-menu:hover {
+    color: blanchedalmond;
+}
+
 .button {
     padding: 15px 20px;
     margin: 10px 15px;
@@ -49,6 +59,11 @@
     color:red;
 }
 
+.button-sum-salary {
+    background-color: rgb(221, 4, 174);
+    color:rgb(208, 255, 0);
+}
+
 .button-word-length {
     background-color: red;
     color:yellowgreen;
@@ -62,6 +77,8 @@
     position: relative;
     bottom: 430px;
 }
+
+
 
 .array-section {
     margin-top: 30px;
@@ -84,7 +101,7 @@
     z-index: 100;
 }
 
-.lightbox-sorted-text {
+.lightbox {
     padding: 30px;
     position: fixed;
     left: 50%;
@@ -111,4 +128,18 @@
 .lightbox-content {
     margin: 20px;
     white-space: pre-wrap;
+}
+
+.calculator-page-section {
+    display: inline-block;
+    margin: 0 20px;
+    text-align: center;
+}
+
+.salary-input {
+    margin: 10px;
+}
+
+.results-salary {
+    margin: 20px 0;
 }

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script src="page-one-script.js"></script>
+    <title>Сайт о том, о сём</title>
+  </head>
+
+  <body class="page sea-theme">
+    <header>
+        <nav>
+          <a class="nav-menu" href="index.html">Главная</a>
+          <a class="nav-menu" href="page-one.html">Калькуляторы всякие</a>
+          <a class="nav-menu" href="page-two.html">Всякие крутые штуки</a>
+        </nav>
+        <h1>Тут калькуляторы будут</h1>
+      </header>
+
+    <section class="calculator-page-section">
+      <h2>Калькулятор</h2>
+      <button class="button button-calculate" type="button">Калькулятор</button>
+    </section>
+
+    <section class="calculator-page-section">
+        <h2>Кодосимвол</h2>
+        <button class="button button-symbol-code" type="button">Код символа</button>
+    </section>
+
+    <section class="calculator-page-section">
+        <h2>Посчитать символы</h2>
+        <button class="button button-symbol-count" type="button">Посчитать символы</button>
+    </section>
+
+    <section class="calculator-page-section">
+        <h2>Посчитать зарплаты</h2>
+        <button class="button button-sum-salary" type="button">Посчитать зарплаты</button>
+    </section>
+
+    <div class="overlay" id="overlay">
+        <div class="lightbox">
+            <div class="lightbox-title">Введите зарплату</div>
+            <div>
+                <form id="salary-form" class="form-salary">
+                    <div class="salary-input">
+                        <label for="name1">Имя</label>
+                        <input type="name1">
+                        <label for="salary1">Зарплата</label>
+                        <input type="salary1">
+                    </div>
+
+                    <div class="salary-input">
+                        <label for="name2">Имя</label>
+                        <input type="name2">
+                        <label for="salary2">Зарплата</label>
+                        <input type="salary2">
+                    </div>
+
+                    <div class="salary-input">
+                        <label for="name3">Имя</label>
+                        <input type="name3">
+                        <label for="salary3">Зарплата</label>
+                        <input type="salary3">
+                    </div>
+
+                    <button type="button" class="button button-calculate-salary">Посчитать</button>
+
+                    <div class="results-salary" style="display: none;">
+                    </div>
+                </form>
+            </div>
+            <div>
+                <button type="button" class="button button-close-lightbox" onclick="off()">Закрыть</button>
+            </div>
+        </div>
+      </div>
+
+    <section>
+      <button class="button button-theme" type="button">Изменить тему</button>
+    </section>
+
+  </body>
+</html>
