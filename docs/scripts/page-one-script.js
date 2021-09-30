@@ -1,5 +1,3 @@
-window.onload = function() {
-
     let buttonCalculate = document.querySelector(".button-calculate");
     buttonCalculate.onclick = function() {
       let calculator = new Calculator();
@@ -18,7 +16,6 @@ window.onload = function() {
 
     let buttonCalculateSalary = document.querySelector(".button-calculate-salary");
     buttonCalculateSalary.onclick = calculateSalary;
-  }
 
   function getDigit(i) {
   let num;
