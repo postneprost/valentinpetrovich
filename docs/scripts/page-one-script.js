@@ -17,6 +17,9 @@
     let buttonCalculateSalary = document.querySelector(".button-calculate-salary");
     buttonCalculateSalary.onclick = calculateSalary;
 
+    let buttonAddSalary = document.querySelector(".button-add-salary");
+    buttonAddSalary.onclick = addSalary;
+
   function getDigit(i) {
   let num;
   do {
@@ -67,17 +70,44 @@
     overlay.style.display = "block";
   }
 
-  function calculateSalary() {
-    let salary = {
-        [document.querySelector("input[type='name1']").value]: +document.querySelector("input[type='salary1']").value,
-        [document.querySelector("input[type='name2']").value]: +document.querySelector("input[type='salary2']").value,
-        [document.querySelector("input[type='name3']").value]: +document.querySelector("input[type='salary3']").value,
-    }
+  let salaryId = 1;
 
-    let resultSalary = ((Object.values(salary)).reduce((sum, current) => sum + current));
+function addSalary() {
+  let div = document.createElement('div');
+  div.className = "salary-input";
+  div.innerHTML = `<label for='nameInputId${salaryId}'>Имя</label> <input id='nameInputId${salaryId}'> <label for='salaryInpurId${salaryId}'>Зарплата</label> <input id='salaryInpurId${salaryId}'>`;
+  buttonAddSalaryId.before(div);
+  salaryId++;
+}
+
+  function calculateSalary() {
+    let salaryMap = new Map();
+
+    let salaryArr = document.querySelectorAll("div.salary-input");
+
+    salaryArr.forEach(e => {
+      salaryMap.set(e.querySelector("input[id*='nameInputId']").value,
+        +e.querySelector("input[id*='salaryInpurId']").value);
+    })
+
+    let salaryObj = Object.fromEntries(salaryMap.entries());
+
+    console.log(salaryArr);
+    console.log(salaryMap);
+    console.log(salaryObj);
+    let {zxc, qwe, asd, ...rest} = salaryObj;
+    console.log(qwe);
+    console.log(asd);
+    console.log(zxc);
+    console.log(rest.xxx);
+    console.log(rest.sss);
+
+    let resultSalaryFromMap = ((Array.from(salaryMap.values())).reduce((sum, current) => sum + current));
+    let resultSalaryFromObj = ((Object.values(salaryObj)).reduce((sum, current) => sum + current));
+    let maxSalary = Math.max(...Object.values(salaryObj));
     let resultSalaryElement = document.querySelector(".results-salary");
     resultSalaryElement.style.display = "block";
-    resultSalaryElement.innerHTML = `Общая зарплата: ${resultSalary}`;
+    resultSalaryElement.innerHTML = `Общая зарплата Map: ${resultSalaryFromMap}<br>Общая зарплата Obj: ${resultSalaryFromObj}<br>Максимальная зарплата: ${maxSalary}`;
 
   }
 

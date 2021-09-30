@@ -78,7 +78,15 @@
     bottom: 430px;
 }
 
+.button-add-salary {
+    background-color: rgb(17, 0, 255);
+    color:rgb(255, 0, 0);
+}
 
+.button-calculate-salary {
+    background-color: rgb(255, 0, 0);
+    color:rgb(21, 255, 0);
+}
 
 .array-section {
     margin-top: 30px;
