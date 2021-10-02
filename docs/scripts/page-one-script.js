@@ -1,50 +1,55 @@
-    let buttonCalculate = document.querySelector(".button-calculate");
-    buttonCalculate.onclick = function() {
-      let calculator = new Calculator();
-      calculator.read();
-      alert("Сумма = " + calculator.sum() + "\r" + "Произведение = " + calculator.mul());
-      }
+let buttonCalculate = document.querySelector(".button-calculate");
+buttonCalculate.onclick = function() {
+  let calculator = new Calculator();
+  alert(`Результат: ` + calculator.calculate(prompt(`Введите выражение`, 0)));
+}
 
-    let buttonSymbolCode = document.querySelector(".button-symbol-code");
-    buttonSymbolCode.onclick = getSymbolCode;
+let buttonSymbolCode = document.querySelector(".button-symbol-code");
+buttonSymbolCode.onclick = getSymbolCode;
 
-    let buttonSymbolCount = document.querySelector(".button-symbol-count");
-    buttonSymbolCount.onclick = getSymbolCount;
+let buttonSymbolCount = document.querySelector(".button-symbol-count");
+buttonSymbolCount.onclick = getSymbolCount;
 
-    let buttonSalaryLightbox = document.querySelector(".button-sum-salary");
-    buttonSalaryLightbox.onclick = lightboxSumSalary;
+let buttonSalaryLightbox = document.querySelector(".button-sum-salary");
+buttonSalaryLightbox.onclick = lightboxSumSalary;
 
-    let buttonCalculateSalary = document.querySelector(".button-calculate-salary");
-    buttonCalculateSalary.onclick = calculateSalary;
+let buttonCalculateSalary = document.querySelector(".button-calculate-salary");
+buttonCalculateSalary.onclick = calculateSalary;
 
-    let buttonAddSalary = document.querySelector(".button-add-salary");
-    buttonAddSalary.onclick = addSalary;
+let buttonAddSalary = document.querySelector(".button-add-salary");
+buttonAddSalary.onclick = addSalary;
 
-  function getDigit(i) {
+let buttonDateTime = document.querySelector(".button-date-time");
+buttonDateTime.onclick = dateTime;
+
+function getDigit(i) {
   let num;
   do {
     num = prompt(`Введите число ${i}`, 0);
   } while (isNaN(parseFloat(num)) || !isFinite(num));
   return +num;
-  };
+};
 
-  function Calculator() {
+function Calculator() {
 
-  this.read = function() {
-    this.x = getDigit(1);
-    this.y = getDigit(2);
-  },
-
-  this.sum = function() {
-    return this.x + this.y;
-  },
-
-  this.mul = function() {
-    return this.x * this.y;
-   }
+  this.methods = {
+    "+": (a, b) => a + b,
+    "-": (a, b) => a - b,
+    "*": (a, b) => a * b,
+    "/": (a, b) => a / b,
   }
 
-  function getSymbolCode() {
+  this.calculate = function(str) {
+    let expression = str.split(' ');
+    a = +expression[0];
+    op = expression[1];
+    b = +expression[2];
+
+    return this.methods[op](a, b);
+  }
+}
+
+function getSymbolCode() {
     let str = prompt('Введите строку, вернем код первого символа', '');
     alert(`В двоичной: ${str.codePointAt(0)}\nВ шестнадцатиричной: ${str.codePointAt(0).toString(16)}`);
   }
@@ -92,16 +97,6 @@ function addSalary() {
 
     let salaryObj = Object.fromEntries(salaryMap.entries());
 
-    console.log(salaryArr);
-    console.log(salaryMap);
-    console.log(salaryObj);
-    let {zxc, qwe, asd, ...rest} = salaryObj;
-    console.log(qwe);
-    console.log(asd);
-    console.log(zxc);
-    console.log(rest.xxx);
-    console.log(rest.sss);
-
     let resultSalaryFromMap = ((Array.from(salaryMap.values())).reduce((sum, current) => sum + current));
     let resultSalaryFromObj = ((Object.values(salaryObj)).reduce((sum, current) => sum + current));
     let maxSalary = Math.max(...Object.values(salaryObj));
@@ -111,6 +106,11 @@ function addSalary() {
 
   }
 
-  function off() {
-    overlay.style.display = "none";
-  }
+function off() {
+  overlay.style.display = "none";
+}
+
+function dateTime() {
+  let now = new Date();
+  alert(now);
+}
