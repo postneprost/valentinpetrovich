@@ -20,7 +20,15 @@ let buttonAddSalary = document.querySelector(".button-add-salary");
 buttonAddSalary.onclick = addSalary;
 
 let buttonDateTime = document.querySelector(".button-date-time");
-buttonDateTime.onclick = dateTime;
+buttonDateTime.onclick = timeBeforeNewYear;
+
+let buttonObjToJson = document.querySelector(".button-obj-json");
+buttonObjToJson.onclick = objToJson;
+
+let buttonSumTo = document.querySelector(".button-sum-to");
+buttonSumTo.onclick = sumTo;
+
+
 
 function getDigit(i) {
   let num;
@@ -110,7 +118,40 @@ function off() {
   overlay.style.display = "none";
 }
 
-function dateTime() {
-  let now = new Date();
-  alert(now);
+function timeBeforeNewYear() {
+
+  let dateNow = new Date();
+  let dateNewYear = new Date(dateNow.getFullYear() + 1, 0);
+  let seconds = Math.round((dateNewYear.getTime() - dateNow.getTime()) / 1000);
+  let minutes = Math.round((dateNewYear.getTime() - dateNow.getTime()) / 1000 / 60);
+  let hours = Math.round((dateNewYear.getTime() - dateNow.getTime()) / 1000 / 60 / 60);
+  let days = Math.round((dateNewYear.getTime() - dateNow.getTime()) / 1000 / 60 / 60 / 24);
+  alert(`Секунд: ${seconds}\nМинут: ${minutes}\nЧасов: ${hours}\nДней: ${days}`);
+}
+
+function objToJson() {
+  let user = {
+    name: prompt('Введите имя', ''),
+    age: prompt('Сколько лет', 0),
+  }
+  alert(user.name);
+  alert(user.age);
+
+  let jsonFromObject = JSON.stringify(user)
+  alert(jsonFromObject);
+
+  let objFromJson = JSON.parse(jsonFromObject);
+  alert(objFromJson.name);
+  alert(objFromJson.age);
+}
+
+function sumTo() {
+  let n = +prompt('Введите число', 0);
+  return alert(recSum(n));
+}
+
+
+function recSum(n) {
+  let sum = n > 1 ? n + recSum(n - 1) : n;
+  return sum;
 }

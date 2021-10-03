@@ -88,6 +88,21 @@
     color:rgb(21, 255, 0);
 }
 
+.button-date-time {
+    background-color: rgb(255, 0, 0);
+    color:rgb(21, 255, 0);
+}
+
+.button-obj-json {
+    background-color: rgb(255, 251, 0);
+    color:rgb(0, 26, 255);
+}
+
+.button-sum-to {
+    background-color: darkgreen;
+    color: darkgrey;
+}
+
 .array-section {
     margin-top: 30px;
 }
