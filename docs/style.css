@@ -36,9 +36,17 @@
 }
 
 .button:hover {
-    opacity: 85%;
     cursor: pointer;
-}
+    animation-name: background-color;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes background-color {
+    100% {
+        opacity: 0;
+    }
+  }
 
 .button-theme {
     background-color:yellow;
