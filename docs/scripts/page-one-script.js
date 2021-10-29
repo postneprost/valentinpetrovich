@@ -28,6 +28,9 @@ buttonObjToJson.onclick = objToJson;
 let buttonSumTo = document.querySelector(".button-sum-to");
 buttonSumTo.onclick = sumTo;
 
+let buttonSumAll = document.querySelector(".button-sum-all");
+buttonSumAll.onclick = asd;
+
 
 
 function getDigit(i) {
@@ -154,4 +157,16 @@ function sumTo() {
 function recSum(n) {
   let sum = n > 1 ? n + recSum(n - 1) : n;
   return sum;
+}
+
+function sumAll(...args) {
+  let sum = 0;
+  for (let arg of args) sum += +arg;
+  return sum;
+}
+
+function asd() {
+  let str = prompt('Введите числа через пробел', 0);
+  let arr = str.split(' ');
+  alert(sumAll(...arr));
 }
